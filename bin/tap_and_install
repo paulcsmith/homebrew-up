@@ -2,4 +2,7 @@
 
 set -e
 
-rm -rf /Users/paul.smith/Library/Caches/Homebrew/downloads && brew untap paulcsmith/up && brew tap --full --force-auto-update paulcsmith/up && brew install docker-up -v
+rm -rf /Users/paul.smith/Library/Caches/Homebrew/downloads && \
+brew untap paulcsmith/up && \
+brew tap --full --force-auto-update paulcsmith/up && \
+brew reinstall docker-up -v
