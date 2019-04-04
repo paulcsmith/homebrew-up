@@ -1,9 +1,9 @@
 class DockerUp < Formula
   desc "Tool for local docker developement"
   homepage "http://github.com/paulcsmith/up"
-  url "https://github.com/paulcsmith/homebrew-up/raw/master/tarballs/docker-up-0.1.2.tar.gz"
-  sha256 "96fc86364cf1210c349baec9a35808eef6f85059c66a2854014919f32d930f0d"
-  version "0.1.2"
+  url "https://github.com/paulcsmith/homebrew-up/raw/master/tarballs/docker-up-0.1.3.tar.gz"
+  sha256 "bcb3fab4065a53a069b8de0b51e41d96fe6c2aa66c2ef7f9dd2de6f681463617"
+  version "0.1.3"
   depends_on "crystal-lang"
 
   def install
