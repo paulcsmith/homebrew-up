@@ -18,8 +18,7 @@ class UpRelease
   end
 
   private def generate_tarball
-    # FileUtils.rm(tarball_path)
-    run_command "tar -czf #{tarball_path} ."
+    run_command "tar -czf #{tarball_path} lib"
   end
 
   def tarball_path
