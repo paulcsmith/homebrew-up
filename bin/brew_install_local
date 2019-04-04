@@ -2,8 +2,7 @@
 
 set -e
 
+# Install the package with local formula
 rm -rf /Users/paul.smith/Library/Caches/Homebrew/downloads && \
 brew uninstall docker-up && \
-brew untap paulcsmith/up && \
-brew tap --full --force-auto-update paulcsmith/up && \
-brew reinstall docker-up -v
+brew reinstall -v Formula/docker-up
