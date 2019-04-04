@@ -1,17 +1,15 @@
 class DockerUp < Formula
-  desc "Tool for local docker developement"
+  desc "Tool for local developement with Docker"
   homepage "http://github.com/paulcsmith/up"
-  url "https://github.com/paulcsmith/homebrew-up/raw/master/tarballs/docker-up-0.1.4.tar.gz"
-  sha256 "29a08b29ba8526493d7feb3814f4e73d213194c27161d85e570479f824c7f0fe"
-  version "0.1.4"
+  url "https://github.com/paulcsmith/homebrew-up/raw/master/tarballs/docker-up-0.1.5.tar.gz"
+  sha256 "36c710c82246f899bc19ce643232325d5d46c77f69aab9fe94db1077e6a6e168"
+  version "0.1.5"
   depends_on "crystal-lang"
 
   def install
     system "ls"
-    system "mkdir lib"
-    system "ls"
-    system "cp . lib"
-    system "ls"
+    system "echo ls"
+    system "echo $PWD"
     system "crystal build lib/up/src/run.cr -o up"
     bin.install "up"
   end

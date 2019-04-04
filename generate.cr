@@ -18,7 +18,7 @@ class UpRelease
   end
 
   private def generate_tarball
-    run_command "tar -vczf #{tarball_path} lib"
+    run_command "tar -czf #{tarball_path} --exclude-from=.tarignore ."
   end
 
   def tarball_path
