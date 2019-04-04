@@ -7,9 +7,6 @@ class DockerUp < Formula
   depends_on "crystal-lang"
 
   def install
-    system "mkdir lib"
-    system "ls"
-    system "mv ./* lib/"
     system "crystal build lib/up/src/run.cr -o up"
     bin.install "up"
   end

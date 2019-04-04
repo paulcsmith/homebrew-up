@@ -1,6 +1,6 @@
 require "colorize"
 require "ecr/macros"
-require "./lib/up/src/up"
+require "./lib/up/src/version"
 
 class UpRelease
   def self.generate
