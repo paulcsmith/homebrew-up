@@ -4,5 +4,5 @@ set -e
 
 # Install the package with local formula
 rm -rf /Users/paul.smith/Library/Caches/Homebrew/downloads && \
-brew uninstall docker-up && \
-brew reinstall -v Formula/docker-up
+brew uninstall docker-up || true && \
+brew install -v Formula/docker-up.rb

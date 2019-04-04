@@ -3,7 +3,7 @@
 set -e
 
 rm -rf /Users/paul.smith/Library/Caches/Homebrew/downloads && \
-brew uninstall docker-up && \
-brew untap paulcsmith/up && \
+brew uninstall docker-up || true && \
+brew untap paulcsmith/up || true && \
 brew tap --full --force-auto-update paulcsmith/up && \
 brew reinstall docker-up -v

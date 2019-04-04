@@ -1,5 +1,6 @@
 require "colorize"
 require "ecr/macros"
+require "file_utils"
 require "./lib/up/src/version"
 
 class UpRelease
@@ -13,11 +14,16 @@ class UpRelease
     puts "Writing new formula"
     generate_new_formula
 
-    puts "All done!".colorize(:green)
+    puts "\nAll done!".colorize(:green)
   end
 
   private def generate_tarball
+    # FileUtils.rm(tarball_path)
     run_command "tar -czf #{tarball_path} ."
+  end
+
+  def tarball_path
+    "tarballs/docker-up-#{version}.tar.gz"
   end
 
   private def generate_new_formula
@@ -26,10 +32,6 @@ class UpRelease
     end
 
     File.write("./Formula/docker-up.rb", formula)
-  end
-
-  def tarball_path
-    "tarballs/docker-up-#{version}.tar.gz"
   end
 
   private def url
@@ -45,18 +47,24 @@ class UpRelease
   end
 
   private def run_command(command)
-    Process.run command,
+    puts command.colorize.dim
+    process_result = Process.run \
+      command,
       shell: true,
       output: STDOUT,
       error: STDERR
+    process_result.success? || exit(1)
   end
 
   private def get_result_from(command)
+    puts command.colorize.dim
     result = IO::Memory.new
-    Process.run command,
+    process_result = Process.run \
+      command,
       shell: true,
       output: result,
       error: STDERR
+    process_result.success? || exit(1)
     result.to_s
   end
 
