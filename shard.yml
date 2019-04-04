@@ -1,0 +1,14 @@
+name: homebrew-up-crystal
+version: 0.1.0
+
+authors:
+  - Paul Smith <paulcsmith0218@gmail.com>
+
+crystal: 0.27.2
+
+license: MIT
+
+dependencies:
+  up:
+    github: paulcsmith/up
+    branch: master
